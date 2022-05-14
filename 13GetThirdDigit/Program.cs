@@ -4,15 +4,15 @@
 Console.WriteLine("Введите целое неотрицательное число");
 int numFromCons = Convert.ToInt32(Console.ReadLine());
 
-GetThirdDigit(numFromCons);
+GetThirdDigit(numFromCons);                                                     //вызов метода GetThirdDigit c результатом обработки введенного числа  
 
-void GetThirdDigit(int numFromCons) 
+void GetThirdDigit(int numFromCons)                                             // описание метода GetThirdDigit
 {
-    if(numFromCons / 100 != 0) {
-        int ThirdDigit = (numFromCons % 1000) / 100;
-        Console.WriteLine("Третья цифра числа - " + ThirdDigit + ".");
-    }
+    if(numFromCons / 100 != 0) {                
+        int ThirdDigit = (numFromCons % 1000) / 100;                            //если есть целая часть от деления на 100, т.е. число трех- или более значное,
+        Console.WriteLine("Третья цифра числа - " + ThirdDigit + ".");          //то отбрасываем разряды старше сотых, затем отбрасываем разряды младше сотых
+    }                                                                           //и выводим строку с указанием цифры в разряде сотых
 else {
-    Console.WriteLine("В этом числе нет третьей цифры.");
+    Console.WriteLine("В этом числе нет третьей цифры.");                       //если целой части при делении на 100 нет, значит, число меньше ста и разряда сотых в нем нет
 }
 }
